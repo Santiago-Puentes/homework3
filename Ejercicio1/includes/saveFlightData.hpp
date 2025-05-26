@@ -4,10 +4,10 @@
 #include "presion.hpp"
 
 class SaveFlightData {
-    vector<shared_ptr<MedicionBase>> mediciones;
+    std::vector<std::shared_ptr<MedicionBase>> mediciones;
     public:
-    void agregarMedicion(shared_ptr<MedicionBase> m);
-    void guardar(const string& filename);
-    void cargar(const string& filename);
+    void agregarMedicion(std::shared_ptr<MedicionBase> m);
+    void guardar(const std::string& filename);
+    void cargar(const std::string& filename);
     void imprimirTodo() const;
 };

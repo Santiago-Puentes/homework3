@@ -5,11 +5,9 @@
 #include <memory>
 #include <string>
 
-using namespace std;
-
 class IMediciones {
 public:
-    virtual void serializar(ofstream& out) const = 0;
-    virtual void deserializar(ifstream& in) = 0;
+    virtual void serializar(std::ofstream& out) const = 0;
+    virtual void deserializar(std::ifstream& in) = 0;
     virtual ~IMediciones() = default;
 };

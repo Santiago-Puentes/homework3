@@ -9,7 +9,7 @@ public:
     Posicion(const Posicion& other);
 
     void imprimir() const override;
-    void serializar(ofstream& out) const override;
-    void deserializar(ifstream& in) override;
-    shared_ptr<MedicionBase> clonar() const override;
+    void serializar(std::ofstream& out) const override;
+    void deserializar(std::ifstream& in) override;
+    std::shared_ptr<MedicionBase> clonar() const override;
 };

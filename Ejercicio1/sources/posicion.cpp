@@ -7,26 +7,26 @@ Posicion::Posicion(float x_, float y_, float z_, double tiempo) : MedicionBase(t
 Posicion::Posicion(const Posicion& other) : MedicionBase(other), x(other.x), y(other.y), z(other.z) {}
 
 void Posicion::imprimir() const {
-    cout << "Posicion: x=" << x << " y=" << y << " z=" << z;
+    std::cout << "Posicion: x=" << x << " y=" << y << " z=" << z;
     if (tiempoMedicion)
-        cout << " tiempo=" << *tiempoMedicion;
-    cout << endl;
+        std::cout << " tiempo=" << *tiempoMedicion;
+    std::cout << std::endl;
 }
 
-void Posicion::serializar(ofstream& out) const {
+void Posicion::serializar(std::ofstream& out) const {
     out.write(reinterpret_cast<const char*>(&x), sizeof(x));
     out.write(reinterpret_cast<const char*>(&y), sizeof(y));
     out.write(reinterpret_cast<const char*>(&z), sizeof(z));
     serializarTiempo(out);
 }
 
-void Posicion::deserializar(ifstream& in) {
+void Posicion::deserializar(std::ifstream& in) {
     in.read(reinterpret_cast<char*>(&x), sizeof(x));
     in.read(reinterpret_cast<char*>(&y), sizeof(y));
     in.read(reinterpret_cast<char*>(&z), sizeof(z));
     deserializarTiempo(in);
 }
 
-shared_ptr<MedicionBase> Posicion::clonar() const {
-    return make_shared<Posicion>(*this);
+std::shared_ptr<MedicionBase> Posicion::clonar() const {
+    return std::make_shared<Posicion>(*this);
 }

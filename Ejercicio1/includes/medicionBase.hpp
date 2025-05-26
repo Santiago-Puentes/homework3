@@ -3,7 +3,7 @@
 
 class MedicionBase : public IMediciones {
 protected:
-    unique_ptr<double> tiempoMedicion;
+    std::unique_ptr<double> tiempoMedicion;
 public:
     MedicionBase();
     MedicionBase(double tiempo);
@@ -11,10 +11,10 @@ public:
     virtual ~MedicionBase() = default;
 
     virtual void imprimir() const = 0;
-    virtual void serializar(ofstream&) const = 0;
-    virtual void deserializar(ifstream&) = 0;
-    virtual shared_ptr<MedicionBase> clonar() const = 0;
+    virtual void serializar(std::ofstream&) const = 0;
+    virtual void deserializar(std::ifstream&) = 0;
+    virtual std::shared_ptr<MedicionBase> clonar() const = 0;
 
-    void serializarTiempo(ofstream& out) const;
-    void deserializarTiempo(ifstream& in);
+    void serializarTiempo(std::ofstream& out) const;
+    void deserializarTiempo(std::ifstream& in);
 };
