@@ -1,4 +1,4 @@
 ej1:
-	cd Ejercicio1 && g++ -std=c++17 -o ejercicio1 sources/*.cpp && ./ejercicio1
+	cd Ejercicio1 && g++ -Wall -Wextra -Wpedantic -Werror -Wconversion -Wsign-conversion -Wshadow -Wnull-dereference -Wfloat-equal -Wduplicated-cond -Wduplicated-branches -Wlogical-op -Wformat=2 -Wcast-align -Wstrict-overflow=5 -Wunsafe-loop-optimizations -Wuseless-cast -Wmissing-include-dirs -Wold-style-cast -Woverloaded-virtual -Wnon-virtual-dtor -Wzero-as-null-pointer-constant -Wmissing-declarations -Weffc++ -Wstack-protector sources/*.cpp -o ejercicio1 && valgrind ./ejercicio1
 ej2:
-	cd Ejercicio2 && g++ -std=c++17 -o ejercicio2 ej2.cpp && ./ejercicio2
+	cd Ejercicio2 && g++ -Wall -Wextra -Wpedantic -Werror -Wconversion -Wsign-conversion -Wshadow -Wnull-dereference -Wfloat-equal -Wduplicated-cond -Wduplicated-branches -Wlogical-op -Wformat=2 -Wcast-align -Wstrict-overflow=5 -Wunsafe-loop-optimizations -Wuseless-cast -Wmissing-include-dirs -Wold-style-cast -Woverloaded-virtual -Wnon-virtual-dtor -Wzero-as-null-pointer-constant -Wmissing-declarations -Weffc++ -Wstack-protector sources/*.cpp examples/main.cpp -o ejercicio2 && valgrind ./ejercicio2
