@@ -7,6 +7,8 @@
 
 template<typename>
 struct always_false : std::false_type {};
+// Esta estructura se usa para activar una aserción estática para
+// tipos no soportados en el método `procesar`.
 
 template<typename T>
 class saveData {
@@ -49,6 +51,7 @@ public:
             }
             oss << "]";
         } else {
+            // Esta línea fuerza un error de compilación si se intenta instanciar saveData con un tipo T no soportado.
             static_assert(always_false<T>::value, "Tipo no soportado");
         }
         return oss.str();

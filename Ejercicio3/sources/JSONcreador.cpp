@@ -17,7 +17,7 @@ void JSONCreador::generarJSON() const {
 
 void JSONCreador::guardarJSON(const std::string& nombre_archivo) const {
     std::ofstream archivo(nombre_archivo);
-    if (!archivo) return; // Manejo simple de error
+    if (!archivo) return;
     archivo << "{\n";
     for (size_t i = 0; i < elementos.size(); ++i) {
         archivo << "  \"" << elementos[i].first << "\": " << elementos[i].second;
